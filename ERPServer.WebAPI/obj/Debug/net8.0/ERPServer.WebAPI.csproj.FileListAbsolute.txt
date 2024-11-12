@@ -171,3 +171,4 @@ C:\MyRepos\ERPServer\ERPServer\ERPServer.WebAPI\obj\Debug\net8.0\refint\ERPServe
 C:\MyRepos\ERPServer\ERPServer\ERPServer.WebAPI\obj\Debug\net8.0\ERPServer.WebAPI.pdb
 C:\MyRepos\ERPServer\ERPServer\ERPServer.WebAPI\obj\Debug\net8.0\ERPServer.WebAPI.genruntimeconfig.cache
 C:\MyRepos\ERPServer\ERPServer\ERPServer.WebAPI\obj\Debug\net8.0\ref\ERPServer.WebAPI.dll
+C:\MyRepos\ERPServer\ERPServer\ERPServer.WebAPI\obj\Debug\net8.0\ERPServer.WebAPI.sourcelink.json
