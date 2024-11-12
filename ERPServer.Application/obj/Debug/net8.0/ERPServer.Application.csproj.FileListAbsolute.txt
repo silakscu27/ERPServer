@@ -1,0 +1,15 @@
+C:\MyRepos\ERPServer\ERPServer\ERPServer.Application\bin\Debug\net8.0\ERPServer.Application.deps.json
+C:\MyRepos\ERPServer\ERPServer\ERPServer.Application\bin\Debug\net8.0\ERPServer.Application.dll
+C:\MyRepos\ERPServer\ERPServer\ERPServer.Application\bin\Debug\net8.0\ERPServer.Application.pdb
+C:\MyRepos\ERPServer\ERPServer\ERPServer.Application\bin\Debug\net8.0\ERPServer.Domain.dll
+C:\MyRepos\ERPServer\ERPServer\ERPServer.Application\bin\Debug\net8.0\ERPServer.Domain.pdb
+C:\MyRepos\ERPServer\ERPServer\ERPServer.Application\obj\Debug\net8.0\ERPServer.Application.csproj.AssemblyReference.cache
+C:\MyRepos\ERPServer\ERPServer\ERPServer.Application\obj\Debug\net8.0\ERPServer.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyRepos\ERPServer\ERPServer\ERPServer.Application\obj\Debug\net8.0\ERPServer.Application.AssemblyInfoInputs.cache
+C:\MyRepos\ERPServer\ERPServer\ERPServer.Application\obj\Debug\net8.0\ERPServer.Application.AssemblyInfo.cs
+C:\MyRepos\ERPServer\ERPServer\ERPServer.Application\obj\Debug\net8.0\ERPServer.Application.csproj.CoreCompileInputs.cache
+C:\MyRepos\ERPServer\ERPServer\ERPServer.Application\obj\Debug\net8.0\ERPServer.Application.csproj.CopyComplete
+C:\MyRepos\ERPServer\ERPServer\ERPServer.Application\obj\Debug\net8.0\ERPServer.Application.dll
+C:\MyRepos\ERPServer\ERPServer\ERPServer.Application\obj\Debug\net8.0\refint\ERPServer.Application.dll
+C:\MyRepos\ERPServer\ERPServer\ERPServer.Application\obj\Debug\net8.0\ERPServer.Application.pdb
+C:\MyRepos\ERPServer\ERPServer\ERPServer.Application\obj\Debug\net8.0\ref\ERPServer.Application.dll
