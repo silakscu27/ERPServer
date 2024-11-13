@@ -17,3 +17,4 @@ C:\MyRepos\ERPServer\ERPServer\ERPServer.Infrastructure\obj\Debug\net8.0\refint\
 C:\MyRepos\ERPServer\ERPServer\ERPServer.Infrastructure\obj\Debug\net8.0\ERPServer.Infrastructure.pdb
 C:\MyRepos\ERPServer\ERPServer\ERPServer.Infrastructure\obj\Debug\net8.0\ERPServer.Infrastructure.genruntimeconfig.cache
 C:\MyRepos\ERPServer\ERPServer\ERPServer.Infrastructure\obj\Debug\net8.0\ref\ERPServer.Infrastructure.dll
+C:\MyRepos\ERPServer\ERPServer\ERPServer.Infrastructure\obj\Debug\net8.0\ERPServer.Infrastructure.sourcelink.json
