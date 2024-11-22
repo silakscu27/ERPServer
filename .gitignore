@@ -1,0 +1,17 @@
+# Config dosyaları
+*.env
+config.json
+settings.json
+
+# Derleme dosyaları
+*.dll
+*.pdb
+*.exe
+.cache
+
+# Debug klasörleri
+bin/
+obj/
+Debug/
+
+*.cache
