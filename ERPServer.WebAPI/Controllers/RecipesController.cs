@@ -13,7 +13,7 @@ public sealed class RecipesController : ApiController
     {
     }
 
-    [HttpPost]
+    [HttpGet]
     public async Task<IActionResult> GetAll(GetAllRecipeQuery request, CancellationToken cancellationToken)
     {
         var response = await _mediator.Send(request, cancellationToken);
@@ -27,7 +27,7 @@ public sealed class RecipesController : ApiController
         return StatusCode(response.StatusCode, response);
     }
 
-    [HttpPost]
+    [HttpDelete]
     public async Task<IActionResult> DeleteById(DeleteRecipeByIdCommand request, CancellationToken cancellationToken)
     {
         var response = await _mediator.Send(request, cancellationToken);

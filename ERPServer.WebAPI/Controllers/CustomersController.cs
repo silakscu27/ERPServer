@@ -14,7 +14,7 @@ public sealed class CustomersController : ApiController
     {
     }
 
-    [HttpPost]
+    [HttpGet]
     public async Task<IActionResult> GetAll(GetAllCustomerQuery request, CancellationToken cancellationToken)
     {
         var response = await _mediator.Send(request, cancellationToken);
@@ -28,14 +28,14 @@ public sealed class CustomersController : ApiController
         return StatusCode(response.StatusCode, response);
     }
 
-    [HttpPost]
+    [HttpDelete]
     public async Task<IActionResult> DeleteById(DeleteCustomerByIdCommand request, CancellationToken cancellationToken)
     {
         var response = await _mediator.Send(request, cancellationToken);
         return StatusCode(response.StatusCode, response);
     }
 
-    [HttpPost]
+    [HttpPut]
     public async Task<IActionResult> Update(UpdateCustomerCommand request, CancellationToken cancellationToken)
     {
         var response = await _mediator.Send(request, cancellationToken);

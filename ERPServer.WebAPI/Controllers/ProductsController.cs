@@ -14,7 +14,7 @@ public sealed class ProductsController : ApiController
     {
     }
 
-    [HttpPost]
+    [HttpGet]
     public async Task<IActionResult> GetAll(GetAllProductQuery request, CancellationToken cancellationToken)
     {
         var response = await _mediator.Send(request, cancellationToken);
@@ -28,7 +28,7 @@ public sealed class ProductsController : ApiController
         return StatusCode(response.StatusCode, response);
     }
 
-    [HttpPost]
+    [HttpDelete]
     public async Task<IActionResult> DeleteById(DeleteProductByIdCommand request, CancellationToken cancellationToken)
     {
         var response = await _mediator.Send(request, cancellationToken);

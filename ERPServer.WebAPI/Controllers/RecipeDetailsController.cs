@@ -14,7 +14,7 @@ public sealed class RecipeDetailsController : ApiController
     {
     }
 
-    [HttpPost]
+    [HttpGet]
     public async Task<IActionResult> GetRecipeByIdWithDetails(GetRecipeByIdWithDetailsQuery request, CancellationToken cancellationToken)
     {
         var response = await _mediator.Send(request, cancellationToken);
@@ -28,14 +28,14 @@ public sealed class RecipeDetailsController : ApiController
         return StatusCode(response.StatusCode, response);
     }
 
-    [HttpPost]
+    [HttpDelete]
     public async Task<IActionResult> DeleteById(DeleteRecipeDetailByIdCommand request, CancellationToken cancellationToken)
     {
         var response = await _mediator.Send(request, cancellationToken);
         return StatusCode(response.StatusCode, response);
     }
 
-    [HttpPost]
+    [HttpPut]
     public async Task<IActionResult> Update(UpdateRecipeDetailCommand request, CancellationToken cancellationToken)
     {
         var response = await _mediator.Send(request, cancellationToken);
