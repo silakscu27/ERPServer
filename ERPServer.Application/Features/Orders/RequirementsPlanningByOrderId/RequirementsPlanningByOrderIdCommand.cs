@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
+using TS.Result;
 
-namespace ERPServer.Application.Features.Orders.RequirementsPlanningByOrderId
-{
-    internal class RequirementsPlanningByOrderIdCommand
-    {
-    }
-}
+namespace ERPServer.Application.Features.Orders.RequirementsPlanningByOrderId;
+public sealed record RequirementsPlanningByOrderIdCommand(
+    Guid OrderId) : IRequest<Result<RequirementsPlanningByOrderIdCommandResponse>>;

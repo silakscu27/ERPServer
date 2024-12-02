@@ -11,6 +11,7 @@ namespace ERPServer.Application.Features.Orders.RequirementsPlanningByOrderId;
 
 internal sealed class RequirementsPlanningByOrderIdCommandHandler(
     IOrderRepository orderRepository,
+    IStockMovementRepository stockMovementRepository,
     IRecipeRepository recipeRepository,
     IUnitOfWork unitOfWork) : IRequestHandler<RequirementsPlanningByOrderIdCommand, Result<RequirementsPlanningByOrderIdCommandResponse>>
 {
@@ -35,15 +36,28 @@ internal sealed class RequirementsPlanningByOrderIdCommandHandler(
         {
             foreach (var item in order.Details)
             {
-                ProductDto uretilmesiGerekenUrun = new()
-                {
-                    Id = item.ProductId,
-                    Name = item.Product!.Name,
-                    Quantity = item.Quantity
-                };
 
-                uretilmesiGerekenUrunListesi.Add(uretilmesiGerekenUrun);
+                var product = item.Product;
+                List<StockMovement> movements =
+                    await stockMovementRepository
+                    .Where(p => p.ProductId == product!.Id)
+                    .ToListAsync(cancellationToken);
+
+                decimal stock = movements.Sum(p => p.NumberOfEntries) - movements.Sum(p => p.NumberOfOutputs);
+
+                if (stock < item.Quantity)
+                {
+                    ProductDto uretilmesiGerekenUrun = new()
+                    {
+                        Id = item.ProductId,
+                        Name = product!.Name,
+                        Quantity = item.Quantity - stock
+                    };
+
+                    uretilmesiGerekenUrunListesi.Add(uretilmesiGerekenUrun);
+                }
             }
+
 
             foreach (var item in uretilmesiGerekenUrunListesi)
             {
@@ -58,14 +72,24 @@ internal sealed class RequirementsPlanningByOrderIdCommandHandler(
                 {
                     foreach (var detail in recipe.Details)
                     {
-                        ProductDto ihtiyacOlanUrun = new()
-                        {
-                            Id = detail.ProductId,
-                            Name = detail.Product!.Name,
-                            Quantity = detail.Quantity
-                        };
+                        List<StockMovement> urunMovements =
+                                await stockMovementRepository
+                                .Where(p => p.ProductId == detail.ProductId)
+                                .ToListAsync(cancellationToken);
 
-                        requirementsPlanningProducts.Add(ihtiyacOlanUrun);
+                        decimal stock = urunMovements.Sum(p => p.NumberOfEntries) - urunMovements.Sum(p => p.NumberOfOutputs);
+
+                        if (stock < detail.Quantity)
+                        {
+                            ProductDto ihtiyacOlanUrun = new()
+                            {
+                                Id = detail.ProductId,
+                                Name = detail.Product!.Name,
+                                Quantity = detail.Quantity - stock
+                            };
+
+                            requirementsPlanningProducts.Add(ihtiyacOlanUrun);
+                        }
                     }
                 }
             }
@@ -89,5 +113,6 @@ internal sealed class RequirementsPlanningByOrderIdCommandHandler(
             order.Number +
             " Nolu Siparişin İhtiyaç Planlaması",
             requirementsPlanningProducts);
+
     }
 }
