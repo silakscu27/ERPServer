@@ -15,23 +15,6 @@ namespace ERPServer.Application.Mapping
             CreateMap<CreateCustomerCommand, Customer>();
             CreateMap<UpdateCustomerCommand, Customer>();
 
-            CreateMap<CreateDepotCommand, Depot>();
-            CreateMap<UpdateDepotCommand, Depot>();
-
-            CreateMap<CreateOrderCommand, Order>()
-            .ForMember(member => member.Details,
-            options =>
-            options.MapFrom(p => p.Details.Select(s => new OrderDetail
-            {
-                Price = s.Price,
-                ProductId = s.ProductId,
-                Quantity = s.Quantity
-            }).ToList()));
-
-            CreateMap<UpdateOrderCommand, Order>()
-                .ForMember(member =>
-                member.Details,
-                options => options.Ignore());
         }
     }
 }
