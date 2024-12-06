@@ -2,6 +2,7 @@
 using ERPServer.Application.Features.Customers.CreateCustomer;
 using ERPServer.Application.Features.Customers.UpdateCustomer;
 using ERPServer.Application.Features.Departments.CreateDepartment;
+using ERPServer.Application.Features.Departments.UpdateDepartment;
 using ERPServer.Domain.Entities;
 namespace ERPServer.Application.Mapping
 {
@@ -13,7 +14,7 @@ namespace ERPServer.Application.Mapping
             CreateMap<UpdateCustomerCommand, Customer>();
 
             CreateMap<CreateDepartmentCommand, Department>();
-
+            CreateMap<UpdateDepartmentCommand, Department>();
         }
     }
 }
