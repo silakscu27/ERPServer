@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ERPServer.Domain.Abstractions;
 
-namespace ERPServer.Domain.Entities
+namespace ERPServer.Domain.Entities;
+
+public sealed class Employee : Entity
 {
-    internal class Employee
-    {
-    }
+    public new Guid Id { get; set; } 
+    public string FirstName { get; set; } = string.Empty;
+    public string LastName { get; set; } = string.Empty; 
+    public string Position { get; set; } = string.Empty; 
+    public Guid DepartmentId { get; set; } 
+    public DateTime HireDate { get; set; } 
+    public decimal Salary { get; set; }
+
+    public Department Department { get; set; } = null!;
 }
