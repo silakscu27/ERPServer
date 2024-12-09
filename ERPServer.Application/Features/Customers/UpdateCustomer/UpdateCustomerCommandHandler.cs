@@ -35,6 +35,6 @@ internal sealed class UpdateCustomerCommandHandler(
 
         await unitOfWork.SaveChangesAsync(cancellationToken);
 
-        return "Müşteri bilgileri başarıyla güncellendi";
+        return Result<string>.Succeed("Müşteri bilgileri başarıyla güncellendi");
     }
 }
