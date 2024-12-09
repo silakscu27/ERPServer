@@ -4,6 +4,7 @@ using ERPServer.Application.Features.Customers.UpdateCustomer;
 using ERPServer.Application.Features.Departments.CreateDepartment;
 using ERPServer.Application.Features.Departments.UpdateDepartment;
 using ERPServer.Application.Features.Employees.CreateEmployee;
+using ERPServer.Application.Features.Employees.UpdateEmployee;
 using ERPServer.Domain.Entities;
 namespace ERPServer.Application.Mapping
 {
@@ -18,6 +19,7 @@ namespace ERPServer.Application.Mapping
             CreateMap<UpdateDepartmentCommand, Department>();
 
             CreateMap<CreateEmployeeCommand, Employee>();
+            CreateMap<UpdateEmployeeCommand, Employee>();
         }
     }
 }
