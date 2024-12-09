@@ -11,8 +11,13 @@ internal sealed class GetAllCustomerQueryHandler(
 {
     public async Task<Result<List<Customer>>> Handle(GetAllCustomerQuery request, CancellationToken cancellationToken)
     {
-        List<Customer> customers = await customerRepository.GetAll().OrderBy(p => p.Name).ToListAsync(cancellationToken);
+        List<Customer> customers = await customerRepository.GetAll()
+            .OrderBy(p => p.FirstName)
+            .ThenBy(p => p.LastName)
+            .ToListAsync(cancellationToken);
 
-        return customers;
+        return customers.Any()
+            ? Result<List<Customer>>.Succeed(customers)
+            : Result<List<Customer>>.Failure("Müşteri bulunamadı");
     }
 }
