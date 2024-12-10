@@ -14,21 +14,19 @@ namespace ERPServer.Infrastructure.Configurations
 
             builder.Property(o => o.OrderDate)
                 .IsRequired()
-                .HasColumnType("datetime"); 
+                .HasColumnType("datetime");
 
             builder.Property(o => o.TotalAmount)
                 .IsRequired()
-                .HasColumnType("decimal(18,2)"); 
+                .HasColumnType("decimal(18,2)");
 
             builder.Property(o => o.Status)
                 .IsRequired()
-                .HasMaxLength(50); 
+                .HasMaxLength(50);
 
-            builder.HasOne(o => o.Customer)
-                .WithMany(c => c.Orders)
-                .HasForeignKey(o => o.CustomerId)
-                .OnDelete(DeleteBehavior.Cascade); 
-
+            builder.HasMany(o => o.OrderCustomers)
+                   .WithOne(oc => oc.Order)
+                   .HasForeignKey(oc => oc.OrderId);
         }
     }
 }
