@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using ERPServer.Application.Features.Categories.CreateCategory;
+using ERPServer.Application.Features.Categories.UpdateCategory;
 using ERPServer.Application.Features.Customers.CreateCustomer;
 using ERPServer.Application.Features.Customers.UpdateCustomer;
 using ERPServer.Application.Features.Departments.CreateDepartment;
@@ -33,9 +35,13 @@ namespace ERPServer.Application.Mapping
             CreateMap<CreateOrderCommand, Order>();
             CreateMap<UpdateOrderCommand, Order>();
 
-            // Order mappings
+            // Stock mappings
             CreateMap<CreateStockCommand, Stock>();
             CreateMap<UpdateStockCommand, Stock>();
+
+            // Category mappings
+            CreateMap<CreateCategoryCommand, Category>();
+            CreateMap<UpdateCategoryCommand, Category>();
         }
     }
 }
