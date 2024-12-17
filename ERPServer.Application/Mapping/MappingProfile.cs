@@ -7,6 +7,8 @@ using ERPServer.Application.Features.Employees.CreateEmployee;
 using ERPServer.Application.Features.Employees.UpdateEmployee;
 using ERPServer.Application.Features.Orders.CreateOrder;
 using ERPServer.Application.Features.Orders.UpdateOrder;
+using ERPServer.Application.Features.Stocks.CreateStock;
+using ERPServer.Application.Features.Stocks.UpdateStock;
 using ERPServer.Domain.Entities;
 
 namespace ERPServer.Application.Mapping
@@ -30,6 +32,10 @@ namespace ERPServer.Application.Mapping
             // Order mappings
             CreateMap<CreateOrderCommand, Order>();
             CreateMap<UpdateOrderCommand, Order>();
+
+            // Order mappings
+            CreateMap<CreateStockCommand, Stock>();
+            CreateMap<UpdateStockCommand, Stock>();
         }
     }
 }
