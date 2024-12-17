@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ERPServer.Domain.Entities;
+using MediatR;
+using TS.Result;
 
-namespace ERPServer.Application.Features.Stocks.GetAllStock
-{
-    internal class GetAllStockQuery
-    {
-    }
-}
+namespace ERPServer.Application.Features.Stocks.GetAllStock;
+
+public sealed record GetAllStockQuery() : IRequest<Result<List<Stock>>>;
