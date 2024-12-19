@@ -2,13 +2,19 @@
 using ERPServer.Domain.Repositories;
 using ERPServer.Infrastructure.Context;
 using GenericRepository;
+using Microsoft.EntityFrameworkCore;
 
-namespace ERPServer.Infrastructure.Repositories
+internal sealed class ProductRepository : Repository<Product, ApplicationDbContext>, IProductRepository
 {
-    internal sealed class ProductRepository : Repository<Product, ApplicationDbContext>, IProductRepository
+    private readonly ApplicationDbContext _dbContext;
+    public ProductRepository(ApplicationDbContext context) : base(context)
     {
-        public ProductRepository(ApplicationDbContext context) : base(context)
-        {
-        }
+        _dbContext = context;
+    }
+
+    public async Task<Product?> GetByIdAsync(Guid id, CancellationToken cancellationToken)
+    {
+        return await _dbContext.Set<Product>()
+                             .FirstOrDefaultAsync(p => p.Id == id, cancellationToken);
     }
 }
