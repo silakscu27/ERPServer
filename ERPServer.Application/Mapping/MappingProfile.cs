@@ -11,6 +11,8 @@ using ERPServer.Application.Features.Orders.CreateOrder;
 using ERPServer.Application.Features.Orders.UpdateOrder;
 using ERPServer.Application.Features.Products.CreateProduct;
 using ERPServer.Application.Features.Products.UpdateProduct;
+using ERPServer.Application.Features.QualityReports.CreateQualityReports;
+using ERPServer.Application.Features.QualityReports.UpdateQualityReports;
 using ERPServer.Application.Features.Stocks.CreateStock;
 using ERPServer.Application.Features.Stocks.UpdateStock;
 using ERPServer.Domain.Entities;
@@ -48,6 +50,10 @@ namespace ERPServer.Application.Mapping
             // Product mappings
             CreateMap<CreateProductCommand, Product>();
             CreateMap<UpdateProductCommand, Product>();
+
+            // Quality Report mappings
+            CreateMap<CreateQualityReportsCommand, QualityReport>();
+            CreateMap<UpdateQualityReportCommand, QualityReport>();
         }
     }
 }
