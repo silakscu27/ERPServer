@@ -52,7 +52,7 @@ namespace ERPServer.Application.Mapping
             CreateMap<UpdateProductCommand, Product>();
 
             // Quality Report mappings
-            CreateMap<CreateQualityReportsCommand, QualityReport>();
+            CreateMap<CreateQualityReportCommand, QualityReport>();
             CreateMap<UpdateQualityReportCommand, QualityReport>();
         }
     }

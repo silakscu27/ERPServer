@@ -2,9 +2,9 @@
 
 namespace ERPServer.Application.Features.QualityReports.CreateQualityReports;
 
-public sealed class CreateQualityReportsCommandValidator : AbstractValidator<CreateQualityReportsCommand>
+public sealed class CreateQualityReportCommandValidator : AbstractValidator<CreateQualityReportCommand>
 {
-    public CreateQualityReportsCommandValidator()
+    public CreateQualityReportCommandValidator()
     {
         RuleFor(q => q.Name)
             .NotEmpty().WithMessage("Rapor adı boş bırakılamaz")
