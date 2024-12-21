@@ -8,9 +8,9 @@ namespace ERPServer.Application.Features.QualityReports.DeleteQualityReportsById
 
 internal sealed class DeleteQualityReportsByIdCommandHandler(
     IQualityReportRepository qualityReportRepository,
-    IUnitOfWork unitOfWork) : IRequestHandler<DeleteQualityReportsByIdCommand, Result<string>>
+    IUnitOfWork unitOfWork) : IRequestHandler<DeleteQualityReportByIdCommand, Result<string>>
 {
-    public async Task<Result<string>> Handle(DeleteQualityReportsByIdCommand request, CancellationToken cancellationToken)
+    public async Task<Result<string>> Handle(DeleteQualityReportByIdCommand request, CancellationToken cancellationToken)
     {
         // Check if the quality report exists
         var qualityReport = await qualityReportRepository.GetByExpressionAsync(q => q.Id == request.Id, cancellationToken);
