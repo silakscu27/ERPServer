@@ -21,6 +21,7 @@ namespace ERPServer.Infrastructure.Context
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<QualityReport> QualityReports { get; set; }
+        public DbSet<QualityChecks> QualityChecks { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfigurationsFromAssembly(typeof(DependencyInjection).Assembly);
