@@ -7,6 +7,8 @@ using ERPServer.Application.Features.Departments.CreateDepartment;
 using ERPServer.Application.Features.Departments.UpdateDepartment;
 using ERPServer.Application.Features.Employees.CreateEmployee;
 using ERPServer.Application.Features.Employees.UpdateEmployee;
+using ERPServer.Application.Features.Equipments.CreateEquipment;
+using ERPServer.Application.Features.Equipments.UpdateEquipment;
 using ERPServer.Application.Features.Orders.CreateOrder;
 using ERPServer.Application.Features.Orders.UpdateOrder;
 using ERPServer.Application.Features.Products.CreateProduct;
@@ -60,6 +62,10 @@ namespace ERPServer.Application.Mapping
             // Quality Check mappings
             CreateMap<CreateQualityCheckCommand, QualityCheck>();
             CreateMap<UpdateQualityCheckCommand, QualityCheck>();
+
+            // Equipment mappings
+            CreateMap<CreateEquipmentCommand, Equipment>();
+            CreateMap<UpdateEquipmentCommand, Equipment>();
         }
     }
 }
