@@ -31,7 +31,7 @@ public sealed class QualityReportsController : ApiController
     [HttpDelete("{id:guid}")]
     public async Task<IActionResult> DeleteByIdAsync(Guid id, CancellationToken cancellationToken)
     {
-        var request = new DeleteQualityReportsByIdCommand(id);
+        var request = new DeleteQualityReportByIdCommand(id);
         var response = await _mediator.Send(request, cancellationToken);
         return StatusCode(response.StatusCode, response);
     }

@@ -2,6 +2,6 @@
 using GenericRepository;
 
 namespace ERPServer.Domain.Repositories;
-public interface IQualityChecksRepository : IRepository<QualityChecks>
+public interface IQualityChecksRepository : IRepository<QualityCheck>
 {
 }
