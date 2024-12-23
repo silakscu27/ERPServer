@@ -6,7 +6,7 @@ using TS.Result;
 
 namespace ERPServer.Application.Features.QualityReports.DeleteQualityReportsById;
 
-internal sealed class DeleteQualityReportsByIdCommandHandler(
+internal sealed class DeleteQualityReportByIdCommandHandler(
     IQualityReportRepository qualityReportRepository,
     IUnitOfWork unitOfWork) : IRequestHandler<DeleteQualityReportByIdCommand, Result<string>>
 {

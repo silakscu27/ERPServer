@@ -3,5 +3,5 @@ using TS.Result;
 
 namespace ERPServer.Application.Features.QualityReports.DeleteQualityReportsById;
 
-public sealed record DeleteQualityReportsByIdCommand(
+public sealed record DeleteQualityReportByIdCommand(
     Guid Id) : IRequest<Result<string>>;
