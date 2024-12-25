@@ -23,6 +23,7 @@ namespace ERPServer.Infrastructure.Context
         public DbSet<QualityReport> QualityReports { get; set; }
         public DbSet<QualityCheck> QualityChecks { get; set; }
         public DbSet<Equipment> Equipments { get; set; }
+        public DbSet<MaintenanceTask> MaintenanceTasks { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfigurationsFromAssembly(typeof(DependencyInjection).Assembly);
