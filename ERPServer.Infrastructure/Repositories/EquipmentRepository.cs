@@ -18,4 +18,9 @@ internal sealed class EquipmentRepository : Repository<Equipment, ApplicationDbC
     {
         return await _dbContext.Set<Equipment>().FirstOrDefaultAsync(predicate, cancellationToken);
     }
+
+    public async Task<Equipment?> GetByIdAsync(Guid id, CancellationToken cancellationToken)
+    {
+        return await _dbContext.Set<Equipment>().FindAsync(new object[] { id }, cancellationToken);
+    }
 }
