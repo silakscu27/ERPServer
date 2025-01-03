@@ -14,7 +14,11 @@ public sealed class ProjectConfiguration : IEntityTypeConfiguration<Project>
 
         builder.Property(p => p.Name)
             .IsRequired() 
-            .HasMaxLength(200); 
+            .HasMaxLength(200);
+
+        builder.Property(p => p.Description)
+            .IsRequired()
+            .HasMaxLength(500);
 
         builder.Property(p => p.StartDate)
             .IsRequired(); 
@@ -25,6 +29,7 @@ public sealed class ProjectConfiguration : IEntityTypeConfiguration<Project>
         builder.Property(p => p.Status)
             .IsRequired() 
             .HasMaxLength(50); 
+
 
     }
 }

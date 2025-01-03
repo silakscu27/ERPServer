@@ -10,6 +10,10 @@ public sealed class UpdateProjectCommandValidator : AbstractValidator<UpdateProj
             .NotEmpty().WithMessage("Proje adı boş olamaz")
             .MaximumLength(200).WithMessage("Proje adı 200 karakterden fazla olamaz");
 
+        RuleFor(p => p.Description)
+            .NotEmpty().WithMessage("Açıklama boş olamaz")
+            .MaximumLength(500).WithMessage("Açıklama 500 karakterden uzun olamaz");
+
         RuleFor(p => p.StartDate)
             .NotEmpty().WithMessage("Başlangıç tarihi boş olamaz");
 
