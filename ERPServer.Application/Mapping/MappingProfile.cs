@@ -15,6 +15,8 @@ using ERPServer.Application.Features.Orders.CreateOrder;
 using ERPServer.Application.Features.Orders.UpdateOrder;
 using ERPServer.Application.Features.Products.CreateProduct;
 using ERPServer.Application.Features.Products.UpdateProduct;
+using ERPServer.Application.Features.Projects.CreateProject;
+using ERPServer.Application.Features.Projects.UpdateProject;
 using ERPServer.Application.Features.QualityChecks.CreateQualityCheck;
 using ERPServer.Application.Features.QualityChecks.UpdateQualityCheck;
 using ERPServer.Application.Features.QualityReports.CreateQualityReports;
@@ -72,6 +74,10 @@ namespace ERPServer.Application.Mapping
             // MaintenanceTask mappings
             CreateMap<CreateMaintenanceTaskCommand, MaintenanceTask>();
             CreateMap<UpdateMaintenanceTaskCommand, MaintenanceTask>();
+
+            // Project mappings
+            CreateMap<CreateProjectCommand, Project>();
+            CreateMap<UpdateProjectCommand, Project>();
         }
     }
 }
