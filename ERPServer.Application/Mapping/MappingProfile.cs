@@ -11,6 +11,8 @@ using ERPServer.Application.Features.Equipments.CreateEquipment;
 using ERPServer.Application.Features.Equipments.UpdateEquipment;
 using ERPServer.Application.Features.MaintenanceTasks.CreateMaintenanceTask;
 using ERPServer.Application.Features.MaintenanceTasks.UpdateMaintenanceTask;
+using ERPServer.Application.Features.Milestones.CreateMilestone;
+using ERPServer.Application.Features.Milestones.UpdateMilestone;
 using ERPServer.Application.Features.Orders.CreateOrder;
 using ERPServer.Application.Features.Orders.UpdateOrder;
 using ERPServer.Application.Features.Products.CreateProduct;
@@ -78,6 +80,10 @@ namespace ERPServer.Application.Mapping
             // Project mappings
             CreateMap<CreateProjectCommand, Project>();
             CreateMap<UpdateProjectCommand, Project>();
+
+            // Milestone mappings
+            CreateMap<CreateMilestoneCommand, Milestone>();
+            CreateMap<UpdateMilestoneCommand, Milestone>();
         }
     }
 }
